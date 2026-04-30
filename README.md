@@ -1,7 +1,4 @@
 # CellECGNet
-Label-free video-based functional phenotyping of cardiomyocyte contraction dynamics
-
-# CellECGNet
 
 **CellECGNet** is a label-free video-based platform for functional phenotyping of cardiomyocyte contraction dynamics.
 
