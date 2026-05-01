@@ -2,22 +2,18 @@
 
 **CellECGNet** is a label-free video-based platform for functional phenotyping of cardiomyocyte contraction dynamics.
 
-CellECGNet analyzes bright-field cardiomyocyte contraction videos and extracts motion-derived contraction traces, contraction-cycle landmarks, functional parameters, and phenotype-level outputs. The current release is provided as Windows executable files for demonstration and internal evaluation. Source code will be released after manuscript preparation and code cleanup.
+CellECGNet analyzes bright-field cardiomyocyte contraction videos and extracts motion-derived contraction traces, contraction-cycle landmarks, functional parameters, and phenotype-level outputs. The repository also includes the supplementary Word document associated with the manuscript.
 
 ## Current Release Status
 
-- Windows executable: two versions are provided in the release package
-  - `CellECGNet-DEFORM`: full version using the DEFORM-Net motion estimation backend
-  - `CellECGNet-DIS`: lightweight version using the OpenCV DIS backend for systems that cannot run the DEFORM-Net version
-- Source code: pending public release
-- Example data: not included in the initial release
-- License: to be determined
+- Supplementary material: the manuscript supplementary Word document has been uploaded.
+- Windows executable: a lightweight DIS version is currently provided.
+- Motion-field backend in this release: OpenCV DIS is used as an alternative motion-field extraction method.
+- License: to be determined.
 
-## Version Selection
+## Version Note
 
-Use `CellECGNet-DEFORM` if your system can run the full DEFORM-Net backend. This is the default full version and is recommended when GPU/deep-learning backend support is available.
-
-Use `CellECGNet-DIS` if the DEFORM-Net version cannot run on your system. The DIS version uses the OpenCV Dense Inverse Search backend and is provided as a lightweight compatibility version.
+The current executable release provides a simplified DIS-based version of CellECGNet. This version uses the OpenCV Dense Inverse Search backend for motion-field extraction and is intended as a lightweight alternative for systems where the full DEFORM-Net backend is not available or not convenient to run.
 
 ## Main Functions
 
@@ -30,7 +26,7 @@ CellECGNet currently supports:
 - Detection of contraction-cycle landmarks:
   - Start
   - maximum contraction speed (MCS)
-  - contraction-to-relaxation transition (CTS)
+  - contraction-relaxation transition (CRT)
   - maximum relaxation speed (MRS)
   - End
 - Extraction of contraction functional parameters, including rhythm, timing, amplitude, velocity-related kinetics, waveform morphology, and spatial synchrony
@@ -49,10 +45,8 @@ These outputs are intended for **functional phenotyping and research use**, not 
 
 ## How to Use
 
-1. Download the appropriate Windows executable from the release page.
-2. Launch the executable:
-   - Use `CellECGNet-DEFORM` for the full version.
-   - Use `CellECGNet-DIS` if the DEFORM-Net version cannot run on your system.
+1. Download the Windows executable from the release page.
+2. Launch `CellECGNet-DIS`.
 3. Import cardiomyocyte contraction videos.
 4. Run the analysis workflow.
 5. Export contraction traces, key-point results, functional parameters, and phenotype-level outputs.
@@ -85,17 +79,13 @@ Depending on the analysis mode, CellECGNet may export:
 
 ## Method Overview
 
-CellECGNet estimates frame-to-frame motion fields from input videos and generates an ROI motion-magnitude trace. The full version uses a DEFORM-Net-based dense motion estimation backend, while the lightweight version uses the OpenCV DIS backend.
+CellECGNet estimates frame-to-frame motion fields from input videos and generates an ROI motion-magnitude trace. In the current lightweight release, motion-field extraction is performed using the OpenCV DIS backend.
 
 Motion-field-derived representations are used for state-based contraction-cycle analysis. Functional parameters are extracted from detected cycle landmarks. A rule-based layer provides interpretable mechanical phenotype screening, and a supervised TCN-BiGRU model performs phenotype-level classification.
 
 ## Research Use Only
 
 CellECGNet is currently intended for research use in cardiomyocyte functional analysis, disease modeling, and drug-response studies. The software output should be interpreted as phenotype-level information and should not be used as a clinical diagnostic result.
-
-## Source Code Availability
-
-The source code is currently being cleaned and organized. It will be made publicly available after manuscript preparation and internal validation are completed.
 
 ## Citation
 
