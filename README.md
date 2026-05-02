@@ -6,7 +6,6 @@ CellECGNet analyzes bright-field cardiomyocyte contraction videos and extracts m
 
 ## Current Release Status
 
-- Supplementary material: the manuscript supplementary Word document has been uploaded.
 - Windows executable: a lightweight DIS version is currently provided.
 - Motion-field backend in this release: OpenCV DIS is used as an alternative motion-field extraction method.
 - Source code: will be made publicly available after publication.
