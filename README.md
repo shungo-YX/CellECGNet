@@ -62,7 +62,7 @@ Recommended video properties:
 - Clear visible contraction activity
 - Stable field of view
 - Sufficient frame rate for contraction-cycle analysis
-- Minimal stage drift and focus instability
+
 
 ## Output Files
 
